@@ -1,0 +1,89 @@
+.box {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	margin-top: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	perspective: 800px;
+	cursor: pointer;
+}
+.plane {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 400px;
+	height: 400px;
+	background: red;
+	transition: .5s;
+}
+.square {
+	position: absolute;
+	width: calc(100% / 3);
+	height: calc(100% / 3);
+	z-index: 1;
+}
+.top-left {
+	top: 0;
+	left: 0;
+}
+.top-left:hover ~ .plane {
+	transform: rotate3d(1,-1,0,-45deg);
+}
+.top-mid {
+	top: 0;
+	left: calc(100% / 3);
+}
+.top-mid:hover ~ .plane {
+	transform: rotateX(-45deg);
+}
+.top-right {
+	top: 0;
+	right: 0;
+}
+.top-right:hover ~ .plane {
+	transform: rotate3d(1,1,0,-45deg);
+}
+.left {
+	top: calc(100% / 3);
+	left: 0;
+}
+.left:hover ~ .plane {
+	transform: rotateY(45deg);
+}
+.center {
+	top: calc(100% / 3);
+	left: calc(100% / 3);
+}
+.right {
+	top: calc(100% / 3);
+	right: 0;
+}
+.right:hover ~ .plane {
+	transform: rotateY(-45deg);
+}
+/* bot */
+.bottom-left {
+	bottom: 0;
+	left: 0;
+}
+.bottom-left:hover ~ .plane {
+	transform: rotate3d(-1,-1,0,-45deg);
+}
+.bottom-mid {
+	bottom: 0;
+	left: calc(100% / 3);
+}
+.bottom-mid:hover ~ .plane {
+	transform: rotateX(45deg);
+}
+.bottom-right {
+	bottom: 0;
+	right: 0;
+}
+.bottom-right:hover ~ .plane {
+	transform: rotate3d(-1,1,0,-45deg);
+}
+

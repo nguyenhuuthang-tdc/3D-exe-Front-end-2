@@ -1,0 +1,136 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	perspective: 800px;
+}
+.wrapper {
+	position: relative;
+	width: 300px;
+	height: 150px;
+	transform: translateZ(100px);
+}
+.box {
+	position: relative;
+	transform-style: preserve-3d;
+	width: 300px;
+	transition: 1s;
+	z-index: 1;
+}
+.box .face {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.front {
+	width: 300px;
+	height: 150px;
+	background: red;
+	transform-origin: top center;
+	transform: translateZ(100px);
+}
+.back {
+	width: 300px;
+	height: 150px;
+	background: green;
+	transform: translateZ(-30px) rotateY(180deg);
+}
+.left {
+	width: 130px;
+	height: 150px;
+	background: yellow;
+	transform: rotateY(90deg) translateX(-100px);
+	transform-origin: center left;
+}
+.right {
+	width: 130px;
+	height: 150px;
+	background: blue;
+	transform: rotateY(90deg) translateZ(170px) translateX(30px);
+	transform-origin: top right;
+}
+.bottom {
+	width: 300px;
+	height: 130px;
+	background: pink;
+	transform: rotateX(-90deg) translateY(30px) translateZ(20px);
+	transform-origin: bottom left;
+}
+.top {
+	width: 300px;
+	height: 130px;
+	background: gray;
+	transform: rotateX(-90deg) translateY(30px) translateZ(-130px);
+	transform-origin: bottom center;
+}
+.square {
+	position: absolute;
+	width: calc(100% / 3);
+	height: calc(100% / 3);
+	z-index: 10;
+}
+.top-left {
+	top: 0;
+	left: 0;
+}
+.top-left:hover ~ .box {
+	transform: rotate3d(1,-1,0,-45deg);
+}
+.top-mid {
+	top: 0;
+	left: calc(100% / 3);
+}
+.top-mid:hover ~ .box {
+	transform: rotateX(-45deg);
+}
+.top-right {
+	top: 0;
+	right: 0;
+}
+.top-right:hover ~ .box {
+	transform: rotate3d(1,1,0,-45deg);
+}
+.lefts {
+	top: calc(100% / 3);
+	left: 0;
+}
+.lefts:hover ~ .box {
+	transform: rotateY(45deg);
+}
+.center {
+	top: calc(100% / 3);
+	left: calc(100% / 3);
+}
+.rights {
+	top: calc(100% / 3);
+	right: 0;
+}
+.rights:hover ~ .box {
+	transform: rotateY(-45deg);
+}
+/* bot */
+.bottom-left {
+	bottom: 0;
+	left: 0;
+}
+.bottom-left:hover ~ .box {
+	transform: rotate3d(-1,-1,0,-45deg);
+}
+.bottom-mid {
+	bottom: 0;
+	left: calc(100% / 3);
+}
+.bottom-mid:hover ~ .box {
+	transform: rotateX(45deg);
+}
+.bottom-right {
+	bottom: 0;
+	right: 0;
+}
+.bottom-right:hover ~ .box {
+	transform: rotate3d(-1,1,0,-45deg);
+}
+
+
